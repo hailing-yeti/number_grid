@@ -5,11 +5,12 @@ import random
 import math
 
 # Set starting values and boundaries
-grid = int(input("Let's define a grid, please enter a number for the length and width:"))
-#take input, square for number range, then halve so we see duplication in numbers
-seed = math.ceil((grid**2)/2)
-print(f"Grid value {grid} seed value {seed}") # Telemetry for error checking
+gridCol = int(input("Let's define a grid, please enter a number for the width:"))
+gridRow = int(input("Let's define a grid, please enter a number for the length:"))
 
+#grid = int(input("Let's define a grid, please enter a number for the length and width:"))
+#take input, square for number range, then halve so we see duplication in numbers
+seed = math.ceil((gridCol*gridRow)/2)
 numlist = []
 # rowlist = "" #unused code bit 
 
@@ -28,8 +29,8 @@ new_number(seed) #future change, check to see if this should be Seed*2 or just S
 print("The number list is: ", numlist)
 
 #build a grid, row by row
-for x in range(grid):
-  for y in range(grid):
+for x in range(gridCol):
+  for y in range(gridRow):
     print(f"{numlist[-1]}", end=" ")
     del numlist[-1] #trimming used numbers
   print("")
